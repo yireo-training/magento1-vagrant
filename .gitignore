@@ -1,0 +1,4 @@
+source/
+.vagrant
+Vagrantfile
+magento_files/*.gz
