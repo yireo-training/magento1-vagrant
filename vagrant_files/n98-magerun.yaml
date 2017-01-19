@@ -19,9 +19,9 @@ commands:
           sample-data: yireo-sample-data-1.6.1.0
 
     demo-data-packages:
-      - name: yireo-sample-data-1.6.1.0
-        version: 1.6.1.0
+      - name: yireo-sample-data-1.9.1.0
+        version: 1.9.1.0
         dist:
-          url: file:///vagrant/vagrant_files/magento-sample-data-1.6.1.0.tar.gz
+          url: file:///vagrant/vagrant_files/magento-sample-data-1.9.1.0.tar.gz
           type: tar
 
