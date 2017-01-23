@@ -9,6 +9,10 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 #
+# Utilities
+apt-get -y install zip
+
+#
 # Disable firewall
 update-rc.d -f ufw remove
 

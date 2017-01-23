@@ -51,6 +51,8 @@ all steps are done, Magento 1 should be available under the following URL:
 
 http://magento1.local/
 
+Magento backend login is available under http://magento1.local/admin with username *admin* and password *admin1234*.
+
 Because Magento 1 enforces a redirect to the right hostname, you will need to add a host-entry to your `hosts`
 file. Under Linux, this is the file `/etc/hosts`:
 
