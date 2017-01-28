@@ -14,14 +14,17 @@ cp /vagrant/vagrant_files/n98-magerun.yaml ~/.n98-magerun.yaml
 mkdir /vagrant/source
 cd /vagrant/source
 
-mkdir /tmp/magento-var
-ln -s /tmp/magento-var var
+ln -s /tmp var
 
 #
 # Magento 1 setup
 #
+
+# Versions are defined in n98-magerun.yml (see above)
 version="yireo-magento-ce-1.9.3.1"
 baseUrl="http://magento1.local/"
+
+# Run installation
 php -d memory_limit=1G /usr/local/bin/magerun install \
     --dbHost="localhost" \
     --dbUser="root" \
@@ -33,7 +36,21 @@ php -d memory_limit=1G /usr/local/bin/magerun install \
     --installationFolder="/vagrant/source" \
     --baseUrl=$baseUrl
 
+# Copy XML configuration (Redis)
 cp /vagrant/vagrant_files/app-etc-local.xml app/etc/local.xml
+
+# Install some extensions optionally
+cp /vagrant/magento_extensions/*.zip .
+for i in *.zip ; do
+    unzip -q $i
+    rm $i
+done
+
+cp /vagrant/magento_extensions/*.tar.gz .
+for i in *.tar.gz ; do
+    tar -xzf $i
+    rm $i
+done
 
 #
 # Install Inchoo_PHP7
