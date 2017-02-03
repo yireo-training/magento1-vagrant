@@ -2,3 +2,5 @@ source/
 .vagrant
 Vagrantfile
 magento_files/*.gz
+magento_extensions
+!magento_extensions/README.md
